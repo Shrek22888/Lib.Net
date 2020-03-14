@@ -1,0 +1,49 @@
+﻿@model Lib.Net.ViewModels.LoginVeiwModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+
+    <div>
+        <h2>Enter</h2>
+
+
+
+        <form asp-action="Login" asp-controller="Account" asp-antiforgery="true">
+            <div class="validation" asp-validation-summary="ModelOnly" />
+
+            <div>
+                <div class="form-group">
+                    <label asp-for="Email">Email</label>
+                    <input type="text" asp-for="Email" />
+                    <span asp-validation-for="Email" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password">Password</label>
+                    <input asp-for="Password" />
+                    <span asp-validation-for="Password" />
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Enter" class="btn btn-outline-dark" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+</body>
+</html>
